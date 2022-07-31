@@ -1,1 +1,1 @@
-type Last<T extends any[]> = any
+type Last<T> = T extends [...any, infer L] ? L : never
