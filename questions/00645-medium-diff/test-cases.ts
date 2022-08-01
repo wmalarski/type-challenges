@@ -20,3 +20,7 @@ type cases = [
   Expect<Equal<Diff<Foo, Coo>, { age: string; gender: number }>>,
   Expect<Equal<Diff<Coo, Foo>, { age: string; gender: number }>>,
 ]
+
+type A = Exclude<keyof Foo, keyof Bar> | Exclude<keyof Bar, keyof Foo>
+
+type cases2 = [Diff<Foo, Bar>, Diff<Bar, Foo>, Diff<Foo, Coo>, Diff<Coo, Foo>]
